@@ -46,10 +46,10 @@ ActiveRecord::Schema.define(version: 20150504034920) do
   create_table "reservations", force: :cascade do |t|
     t.date     "reserved_on"
     t.date     "due_on"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
     t.integer  "user_id"
     t.integer  "book_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   add_index "reservations", ["book_id"], name: "index_reservations_on_book_id"
@@ -60,8 +60,8 @@ ActiveRecord::Schema.define(version: 20150504034920) do
     t.string   "user_id"
     t.string   "password_digest"
     t.boolean  "admin"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end

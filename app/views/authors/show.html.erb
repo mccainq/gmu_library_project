@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<%= image_tag @author.image_url, size: "155x100" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @author.name %>
+</p>
+
+<p>
+  <strong>DOB:</strong>
+  <%= @author.dob %>
+</p>
+
+<p>
+  <strong>Nationality:</strong>
+  <%= @author.nationality %>
+</p>
+
+<p>
+  <strong>Awards:</strong>
+  <%= @author.awards %>
+</p>
+
+<p>
+  <strong>Biography:</strong>
+  <%= @author.biography %>
+</p>
+
+<%= link_to 'Edit', edit_author_path(@author) %> |
+<%= link_to 'Back', authors_path %>
