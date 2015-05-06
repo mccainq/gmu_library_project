@@ -26,6 +26,17 @@
   <strong>Biography:</strong>
   <%= @author.biography %>
 </p>
-
+<br/>
+<h1>Books</h1>
+  <table>
+  <tbody>
+    <% @author.books.each do |bk| %>
+      <tr>
+        <td><%= link_to bk.title, bk %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br/>
 <%= link_to 'Edit', edit_author_path(@author) %> |
 <%= link_to 'Back', authors_path %>
