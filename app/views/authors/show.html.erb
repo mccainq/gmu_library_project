@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <%= image_tag @author.image_url, size: "155x100" %>
 
 <p>
@@ -16,12 +14,12 @@
   <strong>Nationality:</strong>
   <%= @author.nationality %>
 </p>
-
+<% if !@author.awards.blank? %>
 <p>
   <strong>Awards:</strong>
   <%= @author.awards %>
 </p>
-
+<% end %>
 <p>
   <strong>Biography:</strong>
   <%= @author.biography %>

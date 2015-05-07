@@ -1,0 +1,29 @@
+<%= image_tag @book.image_cover_url, size: "155x100" %>
+
+<h1><%= @book.title %> (<%= @book.isbn %>)
+<br/>
+ by <%= @book.author.name %>
+</h1>
+<p>
+  <strong>Genre:</strong>
+  <%= @book.genre %>
+</p>
+<p>
+  <strong>Abstract:</strong>
+  <%= @book.abstract %>
+</p>
+<p>
+  <strong>Pages:</strong>
+  <%= @book.pages %>
+</p>
+<p>
+  <strong>Published On:</strong>
+  <%= @book.published_on %>
+</p>
+<p>
+  <strong>Total In Library:</strong>
+  <%= @book.total_in_library %>
+</p>
+<br/>
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>
