@@ -12,4 +12,9 @@ class Book < ActiveRecord::Base
 
   belongs_to :author
   has_many :reservations
+
+def self.search(query)
+    joins(:author).where("title like ? OR isbn like ? OR authors.name like  ?", "%#{query}%", "#{query}", "%#{query}%")
+end
+
 end

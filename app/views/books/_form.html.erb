@@ -23,10 +23,10 @@
   <%= f.label :author %><br>
   <%= f.select :author_id, options_for_select(Author.all.map{|a|[a.name, a.id]}) %>
 </div>
-  <div class="field">
-    <%= f.label :genre %><br>
-    <%= f.text_field :genre %>
-  </div>
+<div class="field">
+  <%= f.label :genre %><br>
+  <%= f.select :genre, Book::GENRES %>
+</div>
   <div class="field">
     <%= f.label :abstract %><br>
     <%= f.text_area :abstract %>

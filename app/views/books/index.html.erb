@@ -1,7 +1,8 @@
-<p id="notice"><%= notice %></p>
-
+<% if params[:search] %>
+<h3>Search Results</h3>
+<% else %>
 <h3>All Books</h3>
-
+<% end %>
 <%= render 'booklist' %>
 
 <br/>

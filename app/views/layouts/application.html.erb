@@ -13,6 +13,10 @@
   <div class="container">
     <div class="col-xs-9">
       <%= render '/shared/flashes' %>
+        <%= form_tag(books_path, :method => "get", id: "search-form")  do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search Books" %>
+        <%= submit_tag("Search") %>
+      <% end %>
       <%= yield %>
     </div>
     <div class="col-xs-3">

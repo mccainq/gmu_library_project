@@ -1,14 +1,8 @@
 <table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
   <tbody>
     <% @books.each do |bk| %>
       <tr>
+        <td><%= image_tag bk.image_cover_url, size: "50x50" %> </td>
         <td><%= link_to bk.title, bk %> by <%= link_to bk.author.name, bk.author %></td>
       </tr>
     <% end %>
