@@ -25,5 +25,5 @@ Book.create(isbn: '978-1400079988', title: 'War and Peace', author_id:  @leo.id,
 Book.create(isbn: '978-1503332546', title: 'The Jungle Book', author_id:  @kip.id, genre: 'Action & Adventure', abstract: '', pages: 92, image_cover_url: '', total_in_library: 4)
 Book.create(isbn: '978-0316769488', title: 'Catcher in the Rye', author_id:  @jd.id, genre: 'Literary Criticism & Theory', abstract: '', pages: 224, image_cover_url: '', total_in_library: 2)
 Book.create(isbn: '978-1503215153', title: 'Around the World in 80 Days', author_id:  @verne.id, genre: 'Action & Adventure', abstract: '', pages: 130, image_cover_url: '', total_in_library: 1)
-Book.create(isbn: '978-0547928227', title: 'The Hobbit', author_id:  @tolkien.id, genre: ' Science Fiction & Fantasy', abstract: '', pages: 300, image_cover_url: '', total_in_library: 2)
-Book.create(isbn: '978-0345325815', title: 'The Silmarillion', author_id:  @tolkien.id, genre: ' Science Fiction & Fantasy', abstract: '', pages: 480, image_cover_url: '', total_in_library: 1)
+Book.create(isbn: '978-0547928227', title: 'The Hobbit', author_id:  @tolkien.id, genre: 'Science Fiction & Fantasy', abstract: '', pages: 300, image_cover_url: '', total_in_library: 2)
+Book.create(isbn: '978-0345325815', title: 'The Silmarillion', author_id:  @tolkien.id, genre: 'Science Fiction & Fantasy', abstract: '', pages: 480, image_cover_url: '', total_in_library: 1)
