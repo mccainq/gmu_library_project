@@ -28,3 +28,5 @@ Book.where(title: 'Catcher in the Rye').first_or_create!(isbn: '978-0316769488',
 Book.where(title: 'Around the World in 80 Days').first_or_create!(isbn: '978-1503215153', author_id:  @verne.id, genre: 'Action & Adventure', abstract: 'The slow white fox ran slow', pages: 130, image_cover_url: '', published_on: DateTime.new(1900,1,1), total_in_library: 1)
 Book.where(title: 'The Hobbit').first_or_create!(isbn: '978-0547928227', author_id:  @tolkien.id, genre: 'Science Fiction & Fantasy', abstract: 'The slow white fox ran slow', pages: 300, image_cover_url: '', published_on: DateTime.new(1900,1,1), total_in_library: 2)
 Book.where(title: 'The Silmarillion').first_or_create!(isbn: '978-0345325815', author_id:  @tolkien.id, genre: 'Science Fiction & Fantasy', abstract: 'The slow white fox ran slow', pages: 480, image_cover_url: '', published_on: DateTime.new(1900,1,1), total_in_library: 1)
+
+User.where().first_or_create!()

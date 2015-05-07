@@ -19,9 +19,11 @@
       <% end %>
       <%= yield %>
     </div>
+    <% if logged_in? %>
     <div class="col-xs-3">
       <%= render '/layouts/sidebar' %>
     </div>
+    <% end %>
   </div>
   <%= render '/layouts/footer' %>
 </body>

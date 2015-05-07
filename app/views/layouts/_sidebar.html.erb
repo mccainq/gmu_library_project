@@ -5,10 +5,16 @@
     </div>
     <div class="panel-body">
       <p>
-        <%= link_to 'All Books', books_path, class: 'btn btn-primary' %>
+        <%= link_to 'All Books', books_path, class: 'btn btn-default' %>
       </p>
       <p>
-        <%= link_to 'Authors', authors_path, class: 'btn btn-primary' %>
+        <%= link_to 'Authors', authors_path, class: 'btn btn-default' %>
+      </p>
+      <p>
+        <%= link_to 'My Reservations', authors_path, class: 'btn btn-default' %>
+      </p>
+      <p>
+        <%= link_to 'Logout', logout_path, method: "delete", class: 'btn btn-default' %>
       </p>
     </div>
   </div>
