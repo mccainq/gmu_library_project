@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
 
-  get 'reservations/new'
+  #get 'reservations/new'
 
-  get 'reservations/create'
+  #get 'reservations/create'
 
   get 'reservations/index'
 
-  get 'reservations/destroy'
+  #delete '/return_book' => 'reservations#destroy', as: 'return_book'
 
   controller :sessions do
     get 'login' => :new
@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   end
 
   resources :books do
+    resources :reservations
     get 'page/:page', :action => :index, :on => :collection
   end
 

@@ -3,14 +3,10 @@
 <% else %>
 <h3>All Books</h3>
 <% end %>
-
+<div >
   <%= form_tag(books_path, :method => "get", id: "search-form")  do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Books" %>
-    <%= submit_tag("Search") %>
+    <span style="float: right; margin: 0 0 0 5px;"><%= submit_tag("Search", class: "btn btn-default") %></span>
+    <span style="float: right;"><%= text_field_tag :search, params[:search], placeholder: "Search Books", :class => "form-control" %></span>
   <% end %>
-
+</div>
 <%= render 'booklist' %>
-
-<br/>
-
-<%= link_to 'New Book', new_book_path %>

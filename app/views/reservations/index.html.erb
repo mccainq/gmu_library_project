@@ -1,2 +1,11 @@
-<h1>Reservations#index</h1>
-<p>Find me in app/views/reservations/index.html.erb</p>
+<header>My Reservations</header>
+<ol id="reservations">
+  <% @reservations.each do |reservation| %>
+    <li>
+      <span class="reservation"><%= reservation.book.title %></span>
+      <p style="float: left"><%= button_to 'Return Book', book_reservation_path(:book_id => reservation.book.id,
+       :id => reservation.id), :class => "btn btn-danger",
+               method: :delete %></p>
+    </li>
+  <% end %>
+</ol>
