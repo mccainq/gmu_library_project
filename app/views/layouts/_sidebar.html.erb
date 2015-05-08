@@ -5,16 +5,36 @@
     </div>
     <div class="panel-body">
       <p>
-        <%= link_to 'All Books', books_path, class: 'btn btn-default' %>
+        <%= link_to books_path, class: 'btn btn-default btn-block' do %>
+          <span  style="float: left;" class="glyphicon glyphicon-list"></span>All Books
+        <% end %>
       </p>
       <p>
-        <%= link_to 'Authors', authors_path, class: 'btn btn-default' %>
+        <%= link_to authors_path, class: 'btn btn-default btn-block' do %>
+          <span  style="float: left;" class="glyphicon glyphicon-user"></span>Authors
+        <% end %>
       </p>
       <p>
-        <%= link_to 'My Reservations', authors_path, class: 'btn btn-default' %>
+        <%= link_to authors_path, class: 'btn btn-default btn-block' do %>
+          <span  style="float: left;" class="glyphicon glyphicon-tasks"></span>My Reservations
+        <% end %>
       </p>
+      <% if @current_user.admin %>
+        <p>
+          <%= link_to new_book_path, class: 'btn btn-default btn-block' do %>
+            <span  style="float: left;" class="glyphicon glyphicon-asterisk"></span>New Book
+          <% end %>
+        </p>
+        <p>
+          <%= link_to authors_path, class: 'btn btn-default btn-block' do %>
+            <span  style="float: left;" class="glyphicon glyphicon-hourglass"></span>Overdue Books
+          <% end %>
+        </p>
+      <% end %>
       <p>
-        <%= link_to 'Logout', logout_path, method: "delete", class: 'btn btn-default' %>
+        <%= link_to logout_path, method: "delete", class: 'btn btn-default btn-block' do %>
+          <span  style="float: left;" class="glyphicon glyphicon-off"></span>Logout
+        <% end %>
       </p>
     </div>
   </div>

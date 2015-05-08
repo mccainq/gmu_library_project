@@ -1,3 +1,4 @@
+<% content_for :title, @book.title %>
 <%= image_tag @book.image_cover_url, size: "155x100" %>
 
 <h1><%= @book.title %> (<%= @book.isbn %>)
@@ -21,9 +22,18 @@
   <%= @book.published_on %>
 </p>
 <p>
-  <strong>Total In Library:</strong>
+  <strong>Available to Reserve:</strong>
   <%= @book.total_in_library %>
 </p>
 <br/>
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+
+<%= link_to 'Back', books_path %><br />
+
+<% if @current_user.admin %>
+<span style="float: left; margin-right: 10px;"><%= link_to 'Edit', edit_book_path(@book), :class => "btn btn-default" %></span>
+
+<span style="float: left; margin-right: 10px;"><%= button_to 'Delete', @book, :class => "btn btn-danger",
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %></span>
+<% end %>
+<span style="float: left;"><%= button_to 'Reserve', new_book_path, :class => "btn btn-default" %></span>
