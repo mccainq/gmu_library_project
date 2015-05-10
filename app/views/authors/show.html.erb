@@ -36,5 +36,16 @@
   </tbody>
 </table>
 <br/>
-<%= link_to 'Edit', edit_author_path(@author) %> |
-<%= link_to 'Back', authors_path %>
+<span style="float: left; margin-right: 10px;"><%= link_to 'Back', authors_path, :class => "btn btn-default" %></span>
+<% if @current_user.admin %>
+<span style="float: left; margin-right: 10px;"><%= link_to 'Edit', edit_author_path(@author), :class => "btn btn-default" %></span>
+  <% if @author.books.count <  1 %>
+    <span style="float: left; margin-right: 10px;"><%= button_to 'Delete', @author, :class => "btn btn-danger",
+                   method: :delete,
+                   data: { confirm: 'Are you sure?' } %></span>
+  <% elsif @author.books.count > 0 %>
+    <br/>
+    <span style="float: left; margin-right: 10px;">Author has books and can't be deleted </span>
+  <% end %>
+<% end %>
+

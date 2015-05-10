@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   #get 'reservations/create'
 
   get 'reservations/index'
+  get 'books/overdue'
 
   #delete '/return_book' => 'reservations#destroy', as: 'return_book'
 

@@ -1,0 +1,21 @@
+<h3>Overdue Books</h3>
+<table>
+  <tbody>
+    <% @books.each do |bk| %>
+      <tr>
+        <% if bk.reservations.where(user: @current_user).exists? %>
+          <% if Date.today - bk.reservations.where(user: @current_user).first.due_on > 0 %>
+          <td><%= image_tag bk.image_cover_url, size: "50x50" %> </td>
+          <td><%= link_to bk.title, bk %> by <%= link_to bk.author.name, bk.author %><br/> Due: <%= time_ago_in_words(bk.reservations.where(user: @current_user).first.due_on)%> ago</td>
+          <% end %>
+        <% end %>
+      </tr>
+
+  </tbody>
+</table>
+
+<% end %>
+<br />
+
+<div style="float: left"><%= page_entries_info @reservations %></div>
+<div style="float: right"><%= paginate @reservations %></div>

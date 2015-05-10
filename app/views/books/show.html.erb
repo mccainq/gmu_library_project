@@ -3,7 +3,7 @@
 
 <h1><%= @book.title %> (<%= @book.isbn %>)
 <br/>
- by <%= link_to @book.author.name %>
+ by <%= link_to @book.author.name, author_path(@book.author.id) %>
 </h1>
 <p>
   <strong>Genre:</strong>
@@ -36,8 +36,10 @@
                method: :delete,
                data: { confirm: 'Are you sure?' } %></span>
 <% end %>
-<% if @book.reservations.exists?(@current_user) %>
+<% if @book.reservations.exists?(:user_id => @current_user.id) %>
   <span style="float: left;"><%= label 'user_reserved', 'You already have this book checked out.', :class => "label label-default"  %></span>
+<% elsif @book.total_in_library < 1 %>
+  <span style="float: left;"><%= label 'no_reserve', 'Book Unavailable.', :class => "label label-default"  %></span>
 <% else %>
   <span style="float: left;"><%= button_to 'Reserve', new_book_reservation_path(@book), method: :get, :class => "btn btn-default"  %></span>
 <% end %>

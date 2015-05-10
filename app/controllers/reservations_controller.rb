@@ -1,6 +1,6 @@
 class ReservationsController < ApplicationController
   before_action :authorize
-  before_action :set_book, only: [:new, :show, :edit, :destroy, :update]
+  before_action :set_book, only: [:new, :show, :edit, :destroy]
   before_action :set_reservation, only: [:destroy]
 
   def create

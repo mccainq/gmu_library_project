@@ -9,6 +9,16 @@ class BooksController < ApplicationController
     end
   end
 
+  def overdue
+    if params[:search]
+      @books = Book.order(:title).page(params[:page]).search(params[:search])
+      @reservations = Reservation.order(:title).page(params[:page]).search(params[:search])
+    else
+      @books = Book.order(:title).page(params[:page])
+      @reservations = Reservation.order(:title).page(params[:page])
+    end
+  end
+
   def show
   end
 

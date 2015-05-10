@@ -26,7 +26,12 @@
           <% end %>
         </p>
         <p>
-          <%= link_to authors_path, class: 'btn btn-default btn-block' do %>
+        <%= link_to new_author_path, class: 'btn btn-default btn-block' do %>
+          <span  style="float: left;" class="glyphicon glyphicon-plus"></span>New Authors
+        <% end %>
+      </p>
+        <p>
+          <%= link_to books_overdue_path, class: 'btn btn-default btn-block' do %>
             <span  style="float: left;" class="glyphicon glyphicon-hourglass"></span>Overdue Books
           <% end %>
         </p>
