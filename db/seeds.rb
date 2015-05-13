@@ -29,13 +29,15 @@ Book.where(title: 'Around the World in 80 Days').first_or_create!(isbn: '978-150
 Book.where(title: 'The Hobbit').first_or_create!(isbn: '978-0547928227', author_id:  @tolkien.id, genre: 'Science Fiction & Fantasy', abstract: 'The slow white fox ran slow', pages: 300, image_cover_url: '', published_on: DateTime.new(1900,1,1), total_in_library: 2)
 Book.where(title: 'The Silmarillion').first_or_create!(isbn: '978-0345325815', author_id:  @tolkien.id, genre: 'Science Fiction & Fantasy', abstract: 'The slow white fox ran slow', pages: 480, image_cover_url: '', published_on: DateTime.new(1900,1,1), total_in_library: 1)
 
-User.where(name: 'tester2').first_or_create!(user_id: 'Use Instead', password: 'tester', password_confirmation: 'tester', admin: true)
+User.where(name: 'tester2').first_or_create!(user_id: 'tester2', password: 'tester', password_confirmation: 'tester', admin: true)
+User.where(name: 'Test User').first_or_create!(user_id: 'user1', password: 'tester', password_confirmation: 'user1', admin: true)
+
 
 10.times do |n|
   name = Faker::Name.name
   user_id = Faker::Internet.user_name
   password = "password"
-  admin = [true | false].sample
+  admin = [true, false].sample
   User.where(name: name).first_or_create!(
     user_id: user_id,
     password: password,

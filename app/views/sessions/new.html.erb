@@ -1,8 +1,8 @@
 <div class="jumbotron">
 <%= form_for(:session, url: login_path, class: "nav-form") do |f| %>
 
-  <%= f.label :name %>
-  <%= f.text_field :name, autofocus: true, class: "form-control" %><br />
+  <%= f.label :user_id %>
+  <%= f.text_field :user_id, autofocus: true, class: "form-control" %><br />
   <%= f.label :password %>
   <%= f.password_field :password, class: "form-control" %><br />
   <%= f.submit "Log In", class: "btn btn-default" %>
