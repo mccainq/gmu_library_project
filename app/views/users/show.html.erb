@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Name:</strong>
   <%= @user.name %>
@@ -11,23 +9,18 @@
 </p>
 
 <p>
-  <strong>Password digest:</strong>
-  <%= @user.password_digest %>
-</p>
-
-<p>
   <strong>Admin:</strong>
   <%= @user.admin %>
 </p>
 
 <p>
   <strong>Created at:</strong>
-  <%= @user.created_at %>
+  <%= formatted_time @user.created_at %>
 </p>
 
 <p>
   <strong>Updated at:</strong>
-  <%= @user.updated_at %>
+  <%= formatted_time @user.updated_at %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

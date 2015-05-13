@@ -2,13 +2,11 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
-  # GET /users.json
   def index
-    @users = User.order(:name)
+    @users = User.order(:name).page(params[:page])
   end
 
   # GET /users/1
-  # GET /users/1.json
   def show
   end
 
@@ -42,7 +40,6 @@ class UsersController < ApplicationController
   end
 
   # DELETE /users/1
-  # DELETE /users/1.json
   def destroy
     @user.destroy
     respond_to do |format|
