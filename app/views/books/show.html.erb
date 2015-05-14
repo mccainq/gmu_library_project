@@ -41,5 +41,5 @@
 <% elsif @book.total_in_library < 1 %>
   <span style="float: left;"><%= label 'no_reserve', 'Book Unavailable.', :class => "label label-default"  %></span>
 <% else %>
-  <span style="float: left;"><%= button_to 'Reserve', new_book_reservation_path(@book), method: :get, :class => "btn btn-default"  %></span>
+  <span style="float: left;"><%= button_to 'Reserve', book_reservations_path(@book), :class => "btn btn-default"  %></span>
 <% end %>

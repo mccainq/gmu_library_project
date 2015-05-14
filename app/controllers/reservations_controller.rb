@@ -1,21 +1,18 @@
 class ReservationsController < ApplicationController
   before_action :authorize
-  before_action :set_book, only: [:new, :show, :edit, :destroy]
+  before_action :set_book, only: [:create, :show, :edit, :destroy]
   before_action :set_reservation, only: [:destroy]
 
-  def create
-    @reservation = @book.reservations.new
-  end
 
-  def new
+  def create
     @reservation = Reservation.new
     @reservation.user_id = @current_user.id
-    @reservation.book_id = params[:book_id]
+    @reservation.book = @book
 
     if @reservation.save
-      redirect_to reservations_index_path, success: "Reservation made!"
+      redirect_to reservations_index_path, notice: "Reservation made!"
     else
-      redirect_to reservations_index_path, danger: "No Reservation made!"
+      redirect_to reservations_index_path, alert: "No Reservation made!"
     end
   end
 
@@ -31,7 +28,7 @@ class ReservationsController < ApplicationController
   private
 
   def set_book
-    @book = Book.find(params[:book_id])
+    @book = Book.find_by(id: params[:book_id])
   end
 
   def set_reservation
