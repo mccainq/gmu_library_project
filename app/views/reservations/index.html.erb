@@ -2,7 +2,9 @@
 <ol id="reservations">
   <% @reservations.each do |reservation| %>
     <li>
-       <span class="reservation"><%= link_to reservation.book.title, book_path(reservation.book.id) %> - Due: <%= time_ago_in_words(reservation.due_on) %></span>
+      <span class="reservation"><%= link_to reservation.book.title, book_path(reservation.book.id) %> - Due: <%= time_ago_in_words(reservation.due_on) %></span>
+      <p><label>Reserved on:</label> <%= formatted_time reservation.reserved_on %></p>
+      <p><label>Due on:</label> <%= formatted_time reservation.due_on %></p>
           <% if Date.today - reservation.due_on > 0 %>
           overdue
           <% end %>
